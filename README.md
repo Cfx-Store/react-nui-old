@@ -56,6 +56,8 @@ NOTE: Make sure you're running everything in the `web/` directory.
 
 Sure, I'll provide some enhancements to your documentation.
 
+## How to use
+
 #### Visibility
 
 ```tsx
