@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { MoonIcon } from "lucide-react";
+import { HomeIcon, MoonIcon, UsersIcon } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;
@@ -11,10 +11,12 @@ const links = [
   {
     label: "Home",
     href: "/",
+    icon: <HomeIcon className="w-5" />,
   },
   {
     label: "Players",
     href: "/players",
+    icon: <UsersIcon className="w-5" />,
   },
 ];
 
@@ -44,13 +46,19 @@ export default function Layout({ children }: Props) {
               const isSelected = routerState.location.pathname === link.href;
 
               return (
-                <Button
-                  key={link.href}
-                  variant={isSelected ? "outline" : "ghost"}
-                  asChild
-                >
-                  <Link to={link.href as any}>{link.label}</Link>
-                </Button>
+                <Link to={link.href as any}>
+                  <Button
+                    key={link.href}
+                    className="w-full justify-start"
+                    variant={isSelected ? "secondary" : "ghost"}
+                    asChild
+                  >
+                    <div className="flex items-center gap-2">
+                      {link.icon}
+                      {link.label}
+                    </div>
+                  </Button>
+                </Link>
               );
             })}
           </div>
