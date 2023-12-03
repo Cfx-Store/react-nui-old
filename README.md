@@ -54,9 +54,9 @@ NOTE: Make sure you're running everything in the `web/` directory.
    import { <Component> } from "@/components/ui/<component>";
    ```
 
-Sure, I'll provide some enhancements to your documentation.
-
 ## How to use
+
+When the visibility is set to "hidden," it hides the entire layout, including all pages or main content components. It's important to note that any elements such as notifications or alerts, should be placed outside the main layout structure. This ensures their accessibility even when the primary layout is hidden.
 
 #### Visibility
 
@@ -68,8 +68,8 @@ export function Component() {
 
   return (
     <>
-      <button onClick={() => setVisibility(true)}>Show Component</button>
-      <button onClick={() => setVisibility(false)}>Hide Component</button>
+      <button onClick={() => setVisibility(true)}>Show UI</button>
+      <button onClick={() => setVisibility(false)}>Hide UI</button>
     </>
   );
 }
