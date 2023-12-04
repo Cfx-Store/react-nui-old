@@ -41,7 +41,7 @@ export default function Layout({ children }: Props) {
         </div>
 
         <div className="flex h-full">
-          <div className="flex w-1/5 flex-col gap-1 border-r border-border px-3 pt-4">
+          <div className="flex w-1/4 flex-col gap-1 border-r border-border px-3 pt-4">
             {links.map((link) => {
               const isSelected = routerState.location.pathname === link.href;
 
@@ -62,7 +62,8 @@ export default function Layout({ children }: Props) {
               );
             })}
           </div>
-          <div className="p-5">{children}</div>
+
+          <div className="w-full p-5">{children}</div>
         </div>
       </div>
     </div>
